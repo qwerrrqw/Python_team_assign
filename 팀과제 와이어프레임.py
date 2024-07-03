@@ -27,15 +27,14 @@ class Member:
 
 class Post:
     # TODO : 코드 구현이 필요합니다.
-    # - 게시물 제목 (**`title`**)
-    # - 게시물 내용 (**`content`**)
-    # - 작성자 (**`author`**) : 회원의 `username` 이 저장되어야 함! > 작성자가 == 유저네임 
-    pass
+    # - 게시물 제목 (**`title`**)   (done)
+    # - 게시물 내용 (**`content`**)   (done)
+    # - 작성자 (**`author`**) : 회원의 `username`   (done)
+#author는 인터페이스 구현에서 username 으로 넣어주면 됨
 def __init__(self, title, content, author):
-    셀프.타이틀 = 타이틀
-    셀프.컨텐트 = 컨텐트
-    셀프.어서 = 어서 
-
+    self.title = title
+    self.content = content
+    self.author = author
 
 # ----- 코드 실행 ------
 members = []
