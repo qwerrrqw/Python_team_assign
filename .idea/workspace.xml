@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53435ac3-0a51-4c54-9238-42c6b10e803c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../4st_week/optimizing_meeting_room.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../4st_week/sort_combine_arr.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../1st_homework/social_media.py" beforeDir="false" afterPath="$PROJECT_DIR$/../1st_homework/social_media.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python_team_assign.py" beforeDir="false" afterPath="$PROJECT_DIR$/3번 문제.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/팀과제 3번 와이어프레임.py" beforeDir="false" afterPath="$PROJECT_DIR$/팀과제 3번 와이어프레임.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/팀과제 와이어프레임.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../1st_week/prac1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../1st_week/prac1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +44,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main 병합 중",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/ajfqk/PycharmProjects/pythonProject/1st_team_project01",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -98,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719991457283</updated>
-      <workItem from="1719991458309" duration="1422000" />
+      <workItem from="1719991458309" duration="1568000" />
     </task>
     <servers />
   </component>
