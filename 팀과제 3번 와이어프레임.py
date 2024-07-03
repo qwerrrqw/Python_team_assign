@@ -32,12 +32,17 @@ class Post:
     # - 게시물 내용 (**`content`**)   (done)
     # - 작성자 (**`author`**) : 회원의 `username`   (done)
 #author는 인터페이스 구현에서 username 으로 넣어주면 됨
-    def __init__(self, title, content, author):
-
-        셀프.타이틀 = 타이틀
-        셀프.컨텐트 = 컨텐트
-        셀프.어서 = 어서
+def __init__(self, title, content, author):
+<<<<<<< HEAD:팀과제 와이어프레임.py
+    self.title = title
+    self.content = content
+    self.author = author
+=======
+    셀프.타이틀 = 타이틀
+    셀프.컨텐트 = 컨텐트
+    셀프.어서 = 어서 
 #</담당: 김진영>
+>>>>>>> c7c06ad189bc494e617dff9278986a2a9198dbea:팀과제 3번 와이어프레임.py
 
 # ----- 코드 실행 ------
 
