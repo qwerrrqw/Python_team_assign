@@ -107,6 +107,7 @@ for i in posts:
 #  - (심화)비밀번호 해싱이 무엇인지 공부한 후 hashlib 라이브러리를 써서 회원 비밀번호를 해시화하여 저장하게 해주세요.
 # 인터넷 찾아보면서 공부 한 후 작성
 '''
+담당: 나지수
 hashlib 라이브러리 참고 https://docs.python.org/ko/3/library/hashlib.html
 
 import hashlib
