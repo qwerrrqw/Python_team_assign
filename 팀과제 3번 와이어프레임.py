@@ -41,10 +41,6 @@ class Post:
 #author는 인터페이스 구현에서 username 으로 넣어주면 됨
 def __init__(self, title, content, author):
 
-    self.title = title
-    self.content = content
-    self.author = author
-
     셀프.타이틀 = 타이틀
     셀프.컨텐트 = 컨텐트
     셀프.어서 = 어서 
