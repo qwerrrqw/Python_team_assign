@@ -110,8 +110,8 @@ for i in posts:
 담당: 나지수
 hashlib 라이브러리 참고 https://docs.python.org/ko/3/library/hashlib.html
 
-import hashlib
-
+형식 >>>>>>>        import hashlib
+                    hash_object = hashlib.sha256(string.encode()) 
 
 MD5: 속도가 빠르지만 보안에 취약함. 현재는 보안 목적으로 사용하지 않음.
 SHA-1: MD5보다 보안성이 높지만, 현재는 보안 취약점 때문에 사용하지 않음.
