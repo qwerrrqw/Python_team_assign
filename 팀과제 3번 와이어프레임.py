@@ -82,14 +82,36 @@ for i in members:
 
 #<담당: 이세준>
 # - for 문을 돌면서 특정유저가 작성한 게시글의 제목을 모두 프린트 해주세요
-for i in posts:
-    'A'유저가 쓴 글만 검색해야함 > 포스트 유저네임이 'A'면 프린트
-    
+def search_name(author, posts):
+    titles = []
+    for post in posts:
+        if post.author == author:
+            titles.append(post.title)
+    if titles:
+        return titles
+    return "해당 글쓴이를 찾을 수 없습니다."
+# 글쓴이를 입력했을때 해당글쓴이가 작성한 포스트의 제목을 반환하는 함수작성
+search_author = input("찾으실 글쓴이를 입력해주세요: ")
+# 사용자로부터 검색할 글쓴이 입력받기
+search_titles = search_name(search_author, posts)
+print(f"{search_author}가 작성한 게시글은 {','.join(search_titles)} 이/가 있습니다.")
+# 입력받은 글쓴이가 작성한 포스트의 제목들 출력
 
-# - for문을 돌면서 ‘특정 단어’가 content에 포함된 게시글의 제목을 모두 프린트 해주세요.
-for i in posts:
-    if 특정단어 in 포스트.컨텐트:
-        프린트(f'컨텐트에 {특정단어}가 포함된 포스트의 제목 : {포스트.타이틀}')
+def search_include(word, posts):
+    titles = []
+    for post in posts:
+        if word in post.content:
+            titles.append(post.title)
+    if titles:
+        return titles
+    return "해당 검색어를 찾을 수 없습니다."
+# 검색어를 입력했을때 해당검색어가 들어간 포스트의 제목을 반환하는 함수작성
+search_keyword = input("찾으실 검색어를 입력해주세요: ")
+# 사용자로부터 검색할 검색어 입력받기
+search_titles = search_include(search_keyword, posts)
+print(f"{search_keyword}가 들어간 게시글은 {','.join(search_titles)} 이/가 있습니다.")
+# 입력받은 검색어가 들어간 포스트의 제목을 출력
+
 #</담당: 이세준>
 # --------------일반 완료 후 회의--------------
 
