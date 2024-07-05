@@ -8,7 +8,7 @@ class Member:
         self.password = self.hash_password(password)   
     
     def hash_password(self, password):
-        return hashlib.SHA-256(password.encode()).hexdigest()
+        return hashlib.sha256(password.encode()).hexdigest()
         
     def display(self):
         print(f'이름: {self.name}, 아이디: {self.username}')
