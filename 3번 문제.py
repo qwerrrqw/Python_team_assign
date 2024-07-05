@@ -1,3 +1,4 @@
+import hashlib
 # ----- 코드 정의 ------
 class Member:
     
