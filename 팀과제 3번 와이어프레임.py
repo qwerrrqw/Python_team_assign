@@ -1,8 +1,10 @@
+import hashlib
 # **평가**
 # - 클래스와 인스턴스 개념을 설명할 수 있는가?
 # - 메소드와 어트리뷰트(속성)을 설명할 수 있는가?
 # - 클래스를 정의할 수 있는가?
 # - 인스턴스를 생성할 수 있는가?
+
 
 
 # ----- 코드 정의 ------
@@ -14,7 +16,11 @@ class Member:
     def __init__(self, name, username, password):
         셀프.네임 = 네임
         셀프.유저네임 = 유저네임
-        셀프.페스워드 = 페스워드
+        셀프.페스워드 = 셀프.해쉬_페스워드(페스워드)
+        
+        def hash_password(self, password):
+            return hashlib.SHA-256(password.encode()).hexdigest()
+    
     
     def display(self):
         
@@ -28,6 +34,8 @@ class Member:
 3. __init__()의 0번째 자리 self를 통해 이후에 나열된 메서드들에게 접근할 수 있다.
 4. __init__()에서 self.name = name 을 선언해주지 않으면 display()에서 name에 접근 할 수 없다.
 5. 인스턴스 메서드 display()을 사용하면 회원정보를 프린트 해줘야하므로 print(f'string로 멘트와 네임, 유저네임을 호출하며 출력)
+6. hashlib 모듈 사용을 위해 맨위에 import hashlib 작성
+7. def hash_password()인스턴스 메서드를 만들어주고 __init__에 있는 패스워드에 적용해줘서 비밀번호를 받았을때 암호화 되도록함
 '''
 #</담당: 나지수>
 
