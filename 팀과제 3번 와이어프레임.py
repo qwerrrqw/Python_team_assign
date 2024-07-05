@@ -1,8 +1,10 @@
+import hashlib
 # **평가**
 # - 클래스와 인스턴스 개념을 설명할 수 있는가?
 # - 메소드와 어트리뷰트(속성)을 설명할 수 있는가?
 # - 클래스를 정의할 수 있는가?
 # - 인스턴스를 생성할 수 있는가?
+
 
 
 # ----- 코드 정의 ------
@@ -14,7 +16,11 @@ class Member:
     def __init__(self, name, username, password):
         셀프.네임 = 네임
         셀프.유저네임 = 유저네임
-        셀프.페스워드 = 페스워드
+        셀프.페스워드 = 셀프.해쉬_페스워드(페스워드)
+        
+        def hash_password(self, password):
+            return hashlib.SHA-256(password.encode()).hexdigest()
+    
     
     def display(self):
         
@@ -28,6 +34,8 @@ class Member:
 3. __init__()의 0번째 자리 self를 통해 이후에 나열된 메서드들에게 접근할 수 있다.
 4. __init__()에서 self.name = name 을 선언해주지 않으면 display()에서 name에 접근 할 수 없다.
 5. 인스턴스 메서드 display()을 사용하면 회원정보를 프린트 해줘야하므로 print(f'string로 멘트와 네임, 유저네임을 호출하며 출력)
+6. hashlib 모듈 사용을 위해 맨위에 import hashlib 작성
+7. def hash_password()인스턴스 메서드를 만들어주고 __init__에 있는 패스워드에 적용해줘서 비밀번호를 받았을때 암호화 되도록함
 '''
 #</담당: 나지수>
 
@@ -122,13 +130,14 @@ for i in posts:
 # --------------일반 완료 후 회의--------------
 
 # **추가 도전 과제:**
-
+#<화면 공유로 공동작업>
 #  - input을 이용하여 Member 인스턴스 만드는것을 사용자가 터미널에서 할 수 있게 해주세요.
 '''
 담당: 팀원 전체
 가독성 좋게 변수명을 지음
 '''
 #  - post도 터미널에서 생성할 수 있게 해주세요. 
+<<<<<<< HEAD
 # #  >> 어서 == 유저네임
 '''
 담당: 팀원 전체
@@ -136,11 +145,15 @@ for i in posts:
 while문 안에 for문을 만들어 break를 써도 while문을 빠져나가지 못함.
 flag 변수로 탈출을 결정
 '''
+=======
+# #  >> 어서 == 유저네임 확인하는 if문 추가
+#</화면 공유로 공동작업>
+>>>>>>> 4c4aa6675600a043af141fcef8964d38cf0c294a
 
-#  - (심화)비밀번호 해싱이 무엇인지 공부한 후 hashlib 라이브러리를 써서 회원 비밀번호를 해시화하여 저장하게 해주세요.
-# 인터넷 찾아보면서 공부 한 후 작성
+# <나지수>(심화)비밀번호 해싱이 무엇인지 공부한 후 hashlib 라이브러리를 써서 회원 비밀번호를 해시화하여 저장하게 해주세요.
+# 인터넷 찾아보면서 공부 한 후 작성</나지수>
 '''
-담당: 나지수
+코드 설명
 hashlib 라이브러리 참고 https://docs.python.org/ko/3/library/hashlib.html
 형식 >>>>>>>        import hashlib
                     hash_object = hashlib.sha256(string.encode()) 
