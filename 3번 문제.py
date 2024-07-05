@@ -28,9 +28,9 @@ class Post:
 # ----- 코드 실행 ------
 members = []
 
-m1 = Member('name', 'username', 'password')
-m2 = Member('name', 'username', 'password')
-m3 = Member('name', 'username', 'password')
+m1 = Member('aespa', 'KARINA', 'password')
+m2 = Member('NewJeans', 'HANNI', 'password')
+m3 = Member('IVE', 'REI', 'password')
 
 members.append(m1)
 members.append(m2)
@@ -39,6 +39,9 @@ members.append(m3)
 print(members)
 
 posts = []
+
+for member in members:
+    print(member)
 
 # TODO : 코드 구현이 필요합니다.
 
