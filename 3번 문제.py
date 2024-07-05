@@ -1,10 +1,13 @@
 # ----- 코드 정의 ------
+import hashlib
+
 class Member:
     
     def __init__(self, name, username, password):
         self.name = name
         self.username = username
-        self.password = password
+        hash_password = hashlib.sha256(password.encode())
+        self.password = hash_password
 
     def display(self):
         print(f'이름: {self.name}, 아이디: {self.username}')
@@ -56,7 +59,8 @@ posts.append(p7)
 posts.append(p8)
 posts.append(p9)
 
-print(posts)
+for member in members:
+    print(member.display())
 
 
 #----------------------
@@ -91,8 +95,56 @@ def search_include(word, posts):
 search_keyword = input("찾으실 검색어를 입력해주세요: ")
 # 사용자로부터 검색할 검색어 입력받기
 search_titles = search_include(search_keyword, posts)
-if isinstance(search_keyword, list):
+if isinstance(search_titles, list):
     print(f"{search_keyword}가 들어간 게시글: {','.join(search_titles)}")
 else:
     print(f"{search_keyword}가 들어간 게시글이 없습니다.")
 # 입력받은 검색어가 들어간 포스트의 제목을 출력
+
+# **추가 도전 과제:**
+
+#  - input을 이용하여 Member 인스턴스 만드는것을 사용자가 터미널에서 할 수 있게 해주세요.    (done)
+
+#  - post도 터미널에서 생성할 수 있게 해주세요.     (done)
+# #  >> 어서 == 유저네임
+
+#  - (심화)비밀번호 해싱이 무엇인지 공부한 후 hashlib 라이브러리를 써서 회원 비밀번호를 해시화하여 저장하게 해주세요.
+
+name = input("이름을 입력하세요: ")
+user_name = input("아이디를 입력하세요: ")
+password = input("패스워드를 입력하세요: ")
+m4 = Member(name, user_name, password)
+members.append(m4)
+
+post = input("제목을 입력하세요: ")
+content = input("내용울 입력하세요: ")
+while True:
+    author = input("작성자를 입력하세요: ")
+    for member in members:
+        if author == member.username:
+            post10 = Post(post, content, author)
+            posts.append(post10)
+            break
+        else:
+            print("입력하신 작성자의 아이디를 찾을수 없습니다. 다시 입력하세요:")
+
+print("회원 목록")
+for member in members:
+    print(member.display())
+
+print("작성된 글 목록")
+for post in posts:
+    print(f"제목: {post.title},작성자: {post.author}")
+'''
+담당: 나지수
+hashlib 라이브러리 참고 https://docs.python.org/ko/3/library/hashlib.html
+
+형식 >>>>>>>        import hashlib
+                    hash_object = hashlib.sha256(string.encode()) 
+
+MD5: 속도가 빠르지만 보안에 취약함. 현재는 보안 목적으로 사용하지 않음.
+SHA-1: MD5보다 보안성이 높지만, 현재는 보안 취약점 때문에 사용하지 않음.
+SHA-256: 높은 보안성과 적당한 속도로 널리 사용됨.
+SHA-512: SHA-256보다 더 높은 보안성을 제공하지만, 그만큼 속도가 느림.
+
+'''
