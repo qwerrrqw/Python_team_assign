@@ -1,3 +1,4 @@
+import hashlib
 # ----- 코드 정의 ------
 import hashlib
 
@@ -8,7 +9,10 @@ class Member:
         self.username = username
         hash_password = hashlib.sha256(password.encode())
         self.password = hash_password
-
+        self.password = self.hash_password(password)   
+    
+    def hash_password(self, password):
+        return hashlib.md5(password.encode()).hexdigest()
     def display(self):
         print(f'이름: {self.name}, 아이디: {self.username}')
 
@@ -73,15 +77,12 @@ def search_name(author, posts):
     if titles:
         return titles
     return
-# 글쓴이를 입력했을때 해당글쓴이가 작성한 포스트의 제목을 반환하는 함수작성
 search_author = input("찾으실 글쓴이를 입력해주세요: ")
-# 사용자로부터 검색할 글쓴이 입력받기
 search_titles = search_name(search_author, posts)
 if isinstance(search_titles, list):
     print(f"{search_author}가 작성한 게시글: {','.join(search_titles)}")
 else:
     print(f"{search_author}가 작성한 게시글이 없습니다.")
-# 입력받은 글쓴이가 작성한 포스트의 제목들 출력
 
 def search_include(word, posts):
     titles = []
@@ -91,9 +92,7 @@ def search_include(word, posts):
     if titles:
         return titles
     return
-# 검색어를 입력했을때 해당검색어가 들어간 포스트의 제목을 반환하는 함수작성
 search_keyword = input("찾으실 검색어를 입력해주세요: ")
-# 사용자로부터 검색할 검색어 입력받기
 search_titles = search_include(search_keyword, posts)
 if isinstance(search_titles, list):
     print(f"{search_keyword}가 들어간 게시글: {','.join(search_titles)}")
@@ -110,23 +109,23 @@ else:
 
 #  - (심화)비밀번호 해싱이 무엇인지 공부한 후 hashlib 라이브러리를 써서 회원 비밀번호를 해시화하여 저장하게 해주세요.
 
-name = input("이름을 입력하세요: ")
-user_name = input("아이디를 입력하세요: ")
-password = input("패스워드를 입력하세요: ")
-m4 = Member(name, user_name, password)
+new_name = input("이름을 입력하세요: ")
+new_user_name = input("아이디를 입력하세요: ")
+new_password = input("패스워드를 입력하세요: ")
+m4 = Member(new_name, new_user_name, new_password)
 members.append(m4)
 
-post = input("제목을 입력하세요: ")
-content = input("내용울 입력하세요: ")
+new_post = input("제목을 입력하세요: ")
+new_content = input("내용울 입력하세요: ")
 while True:
-    author = input("작성자를 입력하세요: ")
+    new_author = input("작성자를 입력하세요: ")
     for member in members:
-        if author == member.username:
-            post10 = Post(post, content, author)
+        if new_author == member.username:
+            post10 = Post(new_post, new_content, new_author)
             posts.append(post10)
             break
         else:
-            print("입력하신 작성자의 아이디를 찾을수 없습니다. 다시 입력하세요:")
+            print("입력하신 작성자의 아이디를 찾을수 없습니다. 다시 입력하세요!")
 
 print("회원 목록")
 for member in members:
