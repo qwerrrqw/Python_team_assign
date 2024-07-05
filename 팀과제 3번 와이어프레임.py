@@ -137,6 +137,10 @@ for i in posts:
 가독성 좋게 변수명을 지음
 '''
 #  - post도 터미널에서 생성할 수 있게 해주세요. 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a15c48dcb235bd309a6d87fe52f37db8e7de7554
 # #  >> 어서 == 유저네임
 '''
 담당: 팀원 전체
@@ -144,11 +148,14 @@ for i in posts:
 while문 안에 for문을 만들어 break를 써도 while문을 빠져나가지 못함.
 flag 변수로 탈출을 결정
 '''
+<<<<<<< HEAD
+=======
+
+>>>>>>> a15c48dcb235bd309a6d87fe52f37db8e7de7554
 
 # <나지수>(심화)비밀번호 해싱이 무엇인지 공부한 후 hashlib 라이브러리를 써서 회원 비밀번호를 해시화하여 저장하게 해주세요.
 # 인터넷 찾아보면서 공부 한 후 작성</나지수>
 '''
-코드 설명
 hashlib 라이브러리 참고 https://docs.python.org/ko/3/library/hashlib.html
 형식 >>>>>>>        import hashlib
                     hash_object = hashlib.sha256(string.encode()) 
