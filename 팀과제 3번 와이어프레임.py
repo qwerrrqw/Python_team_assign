@@ -8,7 +8,6 @@
 # ----- 코드 정의 ------
 #<담당: 나지수>
 class Member:
-    
     # - 회원 이름 (**`name`**)
     # - 회원 아이디 (**`username`**)
     # - 회원 비밀번호 (**`password`**) 
@@ -109,10 +108,8 @@ for i in posts:
 '''
 담당: 나지수
 hashlib 라이브러리 참고 https://docs.python.org/ko/3/library/hashlib.html
-
 형식 >>>>>>>        import hashlib
                     hash_object = hashlib.sha256(string.encode()) 
-
 MD5: 속도가 빠르지만 보안에 취약함. 현재는 보안 목적으로 사용하지 않음.
 SHA-1: MD5보다 보안성이 높지만, 현재는 보안 취약점 때문에 사용하지 않음.
 SHA-256: 높은 보안성과 적당한 속도로 널리 사용됨.
