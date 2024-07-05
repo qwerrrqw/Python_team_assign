@@ -95,7 +95,7 @@ def search_include(word, posts):
 search_keyword = input("찾으실 검색어를 입력해주세요: ")
 # 사용자로부터 검색할 검색어 입력받기
 search_titles = search_include(search_keyword, posts)
-if isinstance(search_keyword, list):
+if isinstance(search_titles, list):
     print(f"{search_keyword}가 들어간 게시글: {','.join(search_titles)}")
 else:
     print(f"{search_keyword}가 들어간 게시글이 없습니다.")
