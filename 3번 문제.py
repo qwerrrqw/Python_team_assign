@@ -1,6 +1,5 @@
 import hashlib
 # ----- 코드 정의 ------
-import hashlib
 
 # Member 클래스 구현
 
@@ -35,13 +34,13 @@ m1 = Member('KARINA', 'aespa', 'password')
 m2 = Member('HANNI', 'NewJeans', 'password')
 m3 = Member('REI', 'IVE', 'password')
 
+
 members.append(m1)
 members.append(m2)
 members.append(m3)
 
 for member in members:
     member.display()
-
 posts = []
 
 # 포스터 작성
