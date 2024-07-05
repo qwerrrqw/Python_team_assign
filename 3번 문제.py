@@ -4,8 +4,11 @@ class Member:
     def __init__(self, name, username, password):
         self.name = name
         self.username = username
-        self.password = password
-
+        self.password = self.hash_password(password)   
+    
+    def hash_password(self, password):
+        return hashlib.md5(password.encode()).hexdigest()
+        
     def display(self):
         print(f'이름: {self.name}, 아이디: {self.username}')
 
