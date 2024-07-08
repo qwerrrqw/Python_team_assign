@@ -5,27 +5,25 @@ import hashlib
 # - 클래스를 정의할 수 있는가?
 # - 인스턴스를 생성할 수 있는가?
 
-
-
 # ----- 코드 정의 ------
 #<담당: 나지수>
 class Member:
-    # - 회원 이름 (**`name`**)
-    # - 회원 아이디 (**`username`**)
-    # - 회원 비밀번호 (**`password`**) 
+
     def __init__(self, name, username, password):
-        셀프.네임 = 네임
-        셀프.유저네임 = 유저네임
-        셀프.페스워드 = 셀프.해쉬_페스워드(페스워드)
+        self.name = name
+        self.username = username
+        self.password = self.hash_password(password)
+
+    def hash_password(self, password): 
+        return hashlib.sha256(password.encode()).hexdigest() # 보안을 위해 md5에서 sha256으로 변경
         
-        def hash_password(self, password):
-            return hashlib.SHA-256(password.encode()).hexdigest()
+    def display(self):
+        print(f'이름: {self.name}, 아이디: {self.username}')
     
     
     def display(self):
         
         # 회원 정보를 print해주는 display 
-        # (회원이름과 아이디만 보여주고 비밀번호는 보여줘서는 안됩니다!)
         print(f'이름:{셀프.네임}, 아이디:{셀프.유저네임}')
         pass
 ''' 코드설명
@@ -41,16 +39,12 @@ class Member:
 
 #<담당: 김진영>
 class Post:
-    
-    # - 게시물 제목 (**`title`**)   (done)
-    # - 게시물 내용 (**`content`**)   (done)
-    # - 작성자 (**`author`**) : 회원의 `username`   (done)
-#author는 인터페이스 구현에서 username 으로 넣어주면 됨
-def __init__(self, title, content, author):
-
-    셀프.타이틀 = 타이틀
-    셀프.컨텐트 = 컨텐트
-    셀프.어서 = 어서
+    # author는 인스턴스 구현에서 username 으로 넣어주면 됨
+    def __init__(self, title, content, author):
+        self.title = title
+        self.content = content
+        self.author = author
+        
 ''' 코드설명
 1. Post 클래스 생성.
 2. __init__()은 Post객체(인스턴스) 생성 시 초기에 발현되는 메소드. 
@@ -64,19 +58,23 @@ def __init__(self, title, content, author):
 # ----- 코드 실행 ------
 
 #<담당: 이종화>
-members = []
-posts = []
+
+
 
 
 # - 회원 인스턴스를 세개 이상 만들고 `members` 라는 빈리스트에 append를 써서 저장해주세요 
-> 임시 유저 이름 : 'A', 'B', 'C'
-> 멤버스.어펜드('A')
-> 멤버스.어펜드('B')
-> 멤버스.어펜드('')
+# 맴버 인스턴스 생성
+members = []
 
-# - members 리스트를 돌면서 회원들의 이름을 모두 프린트 해주세요
-for i in members:
-    멤버.디스플레이
+m1 = Member('KARINA', 'aespa', 'password')
+m2 = Member('HANNI', 'NewJeans', 'password')
+m3 = Member('REI', 'IVE', 'password')
+members.append(m1)
+members.append(m2)
+members.append(m3)
+
+for member in members:
+    member.display()
 
 '''코드설명
 'Member' 인스터드 생성 및 리스트에 추가하기
@@ -86,17 +84,16 @@ for i in members:
 '''
 
 # - 각각의 회원이 게시글을 세개 이상 작성하는 코드, 만들어진 게시글 인스턴스들은 posts 빈리스트에 append를 써서 저장
-> ex) posts.append(post('네임', '내용 아무거나', '유저네임'))
->
->
 
->
->
->
+# 포스터 작성
 
->
->
->
+posts = []
+p1 = Post('supernova', '가능한 모든 가능성 무한 속의 너를 만나', 'aespa')
+p2 = Post('Armageddon', '악몽은 또 짙게 번져가', 'aespa')
+p3 = Post('Savage', '네 환각들이 점점 너를 구축할 이유가 돼', 'aespa')
+posts.append(p1)
+posts.append(p2)
+posts.append(p3)
 
 '''코드설명
 'Post' 인스턴스 생성 및 리스트에 추가하기
@@ -107,16 +104,31 @@ for i in members:
 #</담당: 이종화>
 
 #<담당: 이세준>
-# - for 문을 돌면서 특정유저가 작성한 게시글의 제목을 모두 프린트 해주세요
-for i in posts:
-    'A'유저가 쓴 글만 검색해야함 > 포스트 유저네임이 'A'면 프린트
-    
+# 작성자 글 반환
+def search_name(author, posts):
+    titles = []
+    for post in posts:
+        작성자가 입력한 author와 같은지 확인
+        작성자가 같은 게시글의 제목을 리스트에 추가
+    if titles:
+        return titles
+    return
 
-# - for문을 돌면서 ‘특정 단어’가 content에 포함된 게시글의 제목을 모두 프린트 해주세요.
-for i in posts:
-    if 특정단어 in 포스트.컨텐트:
-        프린트(f'컨텐트에 {특정단어}가 포함된 포스트의 제목 : {포스트.타이틀}')
+# 검색할 작성자 입력 및 출력
+사용자로부터 검색할 작성자 입력 받음
+if else 조건문과 input값에 맞는 게시글이 있으면 작성자와 게시글제목 출력 아니면 게시글 없다고 출력
+오류를 방지하기 위해 if 문에 isinstance 사용해서 input값이 리스트인지 확인
 
+# 검색어가 포함된 글 반환
+def search_include(word, posts):
+    titles = []
+    for 문으로 게시글 내용에 검색어가 포함되어있는지 확인, 있으면 titles에 append
+    제목 리스트가 비어있을경우 대비 if titles: return titles
+    return 
+
+# 검색할 검색어 입력 및 출력
+사용자로부터 검색할 검색어 입력 받음
+검색어에 해당하는 게시글 제목 검색하고 if else로 검색어가 포함된 게시글 출력, 없으면 없다는 문구 출력
 
 '''코드설명
 1. 글쓴이를 입력했을때 해당글쓴이가 작성한 포스트의 제목을 반환하는 함수작성
@@ -130,7 +142,7 @@ for i in posts:
 # --------------일반 완료 후 회의--------------
 
 # **추가 도전 과제:**
-#<화면 공유로 공동작업>
+화면 공유로 공동작업
 #  - input을 이용하여 Member 인스턴스 만드는것을 사용자가 터미널에서 할 수 있게 해주세요.
 '''
 담당: 팀원 전체
