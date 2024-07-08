@@ -240,3 +240,6 @@
             5. 유효한 작성자가 아닐 경우 다시 입력받음
             6. 모든 회원과 작성된 게시글을 출력함
 
+- 참고자료
+    hashlib 라이브러리: https://docs.python.org/ko/3/library/hashlib.html
+
