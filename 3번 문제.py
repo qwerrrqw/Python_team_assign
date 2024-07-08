@@ -91,9 +91,9 @@ def search_name(author, posts):
 search_author = input("찾으실 글쓴이를 입력해주세요: ")
 search_titles = search_name(search_author, posts)
 if isinstance(search_titles, list):
-    print(f"{search_author}가 작성한 게시글: {','.join(search_titles)}")
+    print(f"{search_author}(이)가 작성한 게시글: {','.join(search_titles)}")
 else:
-    print(f"{search_author}가 작성한 게시글이 없습니다.")
+    print(f"{search_author}(이)가 작성한 게시글이 없습니다.")
 
 
 # 검색어가 포함된 글 반환
@@ -110,9 +110,9 @@ def search_include(word, posts):
 search_keyword = input("찾으실 검색어를 입력해주세요: ")
 search_titles = search_include(search_keyword, posts)
 if isinstance(search_titles, list):
-    print(f"{search_keyword}가 들어간 게시글: {','.join(search_titles)}")
+    print(f"{search_keyword}(이)가 들어간 게시글: {','.join(search_titles)}")
 else:
-    print(f"{search_keyword}가 들어간 게시글이 없습니다.")
+    print(f"{search_keyword}(이)가 들어간 게시글이 없습니다.")
 
 #새로운 사용자 작성
 new_name = input("이름을 입력하세요: ")
