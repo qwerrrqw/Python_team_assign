@@ -43,7 +43,7 @@
 
         def display(self):
             print(f'이름: {self.name}, 아이디: {self.username}')
-    
+    ```
 
 
 프론트엔드:
