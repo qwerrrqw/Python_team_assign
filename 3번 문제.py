@@ -4,7 +4,6 @@ import hashlib
 
 # Member 클래스 구현
 
-
 class Member:
 
     def __init__(self, name, username, password):
