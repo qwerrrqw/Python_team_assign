@@ -123,7 +123,7 @@ members.append(m4)
 
 #새로운 글 작성
 new_post = input("제목을 입력하세요: ")
-new_content = input("내용울 입력하세요: ")
+new_content = input("내용을 입력하세요: ")
 
 #작성자가 members에 없으면 문구 출력 후, while문을 통해 작성자 다시 입력 받음.
 flag = False  # while문 탈출도구
