@@ -13,20 +13,6 @@ class Member:
     def hash_password(self, password):
         return hashlib.sha256(password.encode()).hexdigest() 
 
-    def display(self):
-        print(f'이름: {self.name}, 아이디: {self.username}')
-''' 코드설명
-
-1. 회원의 정보를 담을 오브젝트 생성 > Member 클레스와 __init__, display 인스턴스 메서드 작성
-2. 객체를 생성할 때 마다 초기화하기 위해 초기화 메서드 __init__ 사용
-3. __init__()의 0번째 자리 self를 통해 이후에 나열된 메서드들에게 접근할 수 있다.
-4. __init__()에서 self.name = name 을 선언해주지 않으면 display()에서 name에 접근 할 수 없다.
-5. 인스턴스 메서드 display()을 사용하면 회원정보를 프린트 해줘야하므로 print(f'string로 멘트와 네임, 유저네임을 호출하며 출력)
-6. hashlib 모듈 사용을 위해 맨위에 import hashlib 작성
-7. def hash_password()인스턴스 메서드를 만들어주고 __init__에 있는 패스워드에 적용해줘서 비밀번호를 받았을때 암호화 되도록함
-8. hexdigest() 메서드를 사용해서 암호를 16진수로 변환
-'''
-
 class Post:
     # author는 인스턴스 구현에서 username 으로 넣어주면 됨
     def __init__(self, title, content, author):
@@ -35,7 +21,7 @@ class Post:
         self.author = author
 
 
-# ----- 코드 실행 ------
+
 members = []
 
 # 맴버 인스턴스 생성

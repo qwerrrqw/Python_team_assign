@@ -20,12 +20,7 @@ class Member:
     def display(self):
         print(f'이름: {self.name}, 아이디: {self.username}')
     
-    
-    def display(self):
-        
-        # 회원 정보를 print해주는 display 
-        print(f'이름:{셀프.네임}, 아이디:{셀프.유저네임}')
-        pass
+
 ''' 코드설명
 1. 회원의 정보를 담을 오브젝트 생성 > Member 클레스와 __init__, display 인스턴스 메서드 작성
 2. 객체를 생성할 때 마다 초기화하기 위해 초기화 메서드 __init__ 사용
