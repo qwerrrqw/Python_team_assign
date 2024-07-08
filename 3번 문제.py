@@ -76,8 +76,10 @@ search_author = input("찾으실 글쓴이를 입력해주세요: ")
 search_titles = search_name(search_author, posts)
 if isinstance(search_titles, list):
     print(f"{search_author}(이)가 작성한 게시글: {','.join(search_titles)}")
-else:
+elif search_author == "":
     pass
+else:
+    print(f"{search_author}(이)가 들어간 작성자가 없습니다.")
 
 
 # 검색어가 포함된 글 반환
@@ -144,12 +146,13 @@ while True:
         break
     print("입력하신 작성자의 아이디를 찾을수 없습니다. 다시 입력하세요!")
 
+print("\n")
 #새로운 사용자가 추가된 회원 목록
 print("회원 목록")
 time.sleep(2)
 for member in members:
     member.display()
-
+print("\n")
 time.sleep(3)
 #새로운 글이 추가된 글 목록
 print("작성된 글 목록")
