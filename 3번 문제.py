@@ -18,13 +18,12 @@ class Member:
     def hash_password(self, password):
         return hashlib.sha256(password.encode()).hexdigest()
 
-<<<<<<< HEAD
-=======
+
     #맴버 name과 username보여주는 함수
     def display(self):
         print(f'이름: {self.name}, 아이디: {self.username}')
 
->>>>>>> refs/remotes/origin/main
+
 class Post:
     # author는 인스턴스 구현에서 username 으로 넣어주면 됨
     def __init__(self, title, content, author):
@@ -63,7 +62,7 @@ posts.append(Post('LOVE DIVE', '참을 수 없는 이끌림과 호기심', 'IVE'
 
 
 # ----------------------
-
+# 아무것도 입력안하고 엔터 눌렀을때 skip하게 변경
 # 작성자 글 반환
 def search_name(author, posts):
     titles = []
@@ -134,7 +133,7 @@ while True:
     if new_post == '':
         print("제목 입력이 되지 않았습니다. 다시 입력해주세요.")
     else:
-        break
+        break 
 
 #작성자가 members에 없으면 문구 출력 후, while문을 통해 작성자 다시 입력 받음.
 flag = False  # while문 탈출도구
@@ -164,4 +163,4 @@ time.sleep(2)
 for post in posts:
     print(f"제목: {post.title}, 작성자: {post.author}")
 
-time.sleep(2)
+time.sleep(2)# 한번에 나오면 어지러우니까 중간중간 time.sleep()으로 지연 넣음

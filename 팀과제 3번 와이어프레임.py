@@ -19,10 +19,6 @@ class Member:
         
     def display(self):
         print(f'이름: {self.name}, 아이디: {self.username}')
-<<<<<<< HEAD
-    
-=======
->>>>>>> refs/remotes/origin/main
 
 ''' 코드설명
 1. 회원의 정보를 담을 오브젝트 생성 > Member 클레스와 __init__, display 메서드 작성
@@ -64,12 +60,12 @@ class Post:
 # 맴버 인스턴스 생성
 members = []
 
-m1 = Member('KARINA', 'aespa', 'password')
-m2 = Member('HANNI', 'NewJeans', 'password')
-m3 = Member('REI', 'IVE', 'password')
-members.append(m1)
-members.append(m2)
-members.append(m3)
+# m1 = Member('KARINA', 'aespa', 'password') >>>>> 최적화를 위해 삭제
+# m2 = Member('HANNI', 'NewJeans', 'password')
+# m3 = Member('REI', 'IVE', 'password')
+members.append(Member('KARINA', 'aespa', 'password'))
+members.append(Member('HANNI', 'NewJeans', 'password'))
+members.append(Member('REI', 'IVE', 'password'))
 
 for member in members:
     member.display()
@@ -86,22 +82,24 @@ for member in members:
 # 포스터 작성
 
 posts = []
-p1 = Post('supernova', '가능한 모든 가능성 무한 속의 너를 만나', 'aespa')
-p2 = Post('Armageddon', '악몽은 또 짙게 번져가', 'aespa')
-p3 = Post('Savage', '네 환각들이 점점 너를 구축할 이유가 돼', 'aespa')
-posts.append(p1)
-posts.append(p2)
-posts.append(p3)
+# p1 = Post('supernova', '가능한 모든 가능성 무한 속의 너를 만나', 'aespa') >>>> 최적화를 위해 삭제
+# p2 = Post('Armageddon', '악몽은 또 짙게 번져가', 'aespa')
+# p3 = Post('Savage', '네 환각들이 점점 너를 구축할 이유가 돼', 'aespa')
+posts.append(Post('supernova', '가능한 모든 가능성 무한 속의 너를 만나', 'aespa'))
+posts.append(Post('Armageddon', '악몽은 또 짙게 번져가', 'aespa'))
+posts.append(Post('Savage', '네 환각들이 점점 너를 구축할 이유가 돼', 'aespa'))
 
 '''코드설명
 'Post' 인스턴스 생성 및 리스트에 추가하기
 1. 여러 'post' 객체를 생성해 'posts' 리스트에 추가함.
 2. 이 객체들을 'posts' 리스트에 추가함. 
 3. 'print(posts)'로 리스트를 출력함. (이것은 각 객체의 메모리 주소를 보여줌)
+4. 최적화를 위해 한번만 쓰이는 변수는 따로 선언하지 않고 제거, 직접 append함 (m1~m4, p1~p9)
 '''
 #</담당: 이종화>
 
 #<담당: 이세준>
+# 아무것도 입력안하고 엔터 눌렀을때 skip하게 변경
 # 작성자 글 반환
 def search_name(author, posts):
     titles = []
@@ -110,12 +108,13 @@ def search_name(author, posts):
         작성자가 같은 게시글의 제목을 리스트에 추가
     if titles:
         return titles
-    return
+    return # 이름, 아이디, 패스워드 전부 입력했을때만 회원정보 등록, 아닐경우 초기화기능 추가
 
 # 검색할 작성자 입력 및 출력
 사용자로부터 검색할 작성자 입력 받음
 if else 조건문과 input값에 맞는 게시글이 있으면 작성자와 게시글제목 출력 아니면 게시글 없다고 출력
 오류를 방지하기 위해 if 문에 isinstance 사용해서 input값이 리스트인지 확인
+이름, 비밀번호, 아이디 모두 입력했을때만 등록, 아닐경우 전부 입력하도록 유도 문구 출력 후 다시 입력 받음
 
 # 검색어가 포함된 글 반환
 def search_include(word, posts):
@@ -127,6 +126,8 @@ def search_include(word, posts):
 # 검색할 검색어 입력 및 출력
 사용자로부터 검색할 검색어 입력 받음
 검색어에 해당하는 게시글 제목 검색하고 if else로 검색어가 포함된 게시글 출력, 없으면 없다는 문구 출력
+
+# 한번에 나오면 어지러우니까 중간중간 time.sleep()으로 지연 넣음
 
 '''코드설명
 1. 글쓴이를 입력했을때 해당글쓴이가 작성한 포스트의 제목을 반환하는 함수작성

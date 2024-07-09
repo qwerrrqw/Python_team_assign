@@ -28,7 +28,7 @@
 
     1. Python 실행시 회원 이름과 아이디가 출력됨.
     
-    2. '찾으실 글쓴이를 입력해주세요'에서 아이디 입력시 해당 회원이 작성한 글 출력됨 만약 없다면 없다는 맨트 출력, 해당 기능을 이용하지 않을경우 엔터를 눌러 스킵
+    2. '찾으실 글쓴이를 입력해주세요'에서 아이디 입력시 해당 회원이 작성한 글 출력됨 만약 없다면 없다는 맨트 출력, 해당 기능을 이용하지 않으면 엔터를 눌러 스킵
     3. '찾으실 검색어를 입력해주세요:'에서 해당 검색어가 들어간 게시글 검색 가능, 검색어의 내용이 들어간 게시글이 존재할 경우 게시글의 제목이 출력됨
     
     4. 작성 완료하면 회원 리스트에 추가됨 
@@ -110,14 +110,10 @@
         members = []
 
         # 맴버 인스턴스 생성
-        m1 = Member('KARINA', 'aespa', 'password')
-        m2 = Member('HANNI', 'NewJeans', 'password')
-        m3 = Member('REI', 'IVE', 'password')
-
-        members.append(m1)
-        members.append(m2)
-        members.append(m3)
-
+        members.append(Member('KARINA', 'aespa', 'password'))
+        members.append(Member('HANNI', 'NewJeans', 'password'))
+        members.append(Member('REI', 'IVE', 'password'))
+        
         for member in members:
             member.display()
         ```
@@ -131,26 +127,17 @@
         posts = []
 
         # 포스터 작성
-        p1 = Post('supernova', '가능한 모든 가능성 무한 속의 너를 만나', 'aespa')
-        p2 = Post('Armageddon', '악몽은 또 짙게 번져가', 'aespa')
-        p3 = Post('Savage', '네 환각들이 점점 너를 구축할 이유가 돼', 'aespa')
-        posts.append(p1)
-        posts.append(p2)
-        posts.append(p3)
+        posts.append(Post('supernova', '가능한 모든 가능성 무한 속의 너를 만나', 'aespa'))
+        posts.append(Post('Armageddon', '악몽은 또 짙게 번져가', 'aespa'))
+        posts.append(Post('Savage', '네 환각들이 점점 너를 구축할 이유가 돼', 'aespa'))
 
-        p4 = Post('Super Shy', '나 원래 말도 잘하고 그런데 왜 이런지', 'NewJeans')
-        p5 = Post('Bubble Gum', '내 향기가 널 먼저 찾아가', 'NewJeans')
-        p6 = Post('Supernatural', '너와 나 다시 한번 만나게', 'NewJeans')
-        posts.append(p4)
-        posts.append(p5)
-        posts.append(p6)
+        posts.append(Post('Super Shy', '나 원래 말도 잘하고 그런데 왜 이런지', 'NewJeans'))
+        posts.append(Post('Bubble Gum', '내 향기가 널 먼저 찾아가', 'NewJeans'))
+        posts.append(Post('Supernatural', '너와 나 다시 한번 만나게', 'NewJeans'))
 
-        p7 = Post('Accendio', '주문 걸어 아센디오', 'IVE')
-        p8 = Post('I AM', '어제랑 또 다른 짜릿한 나', 'IVE')
-        p9 = Post('LOVE DIVE', '참을 수 없는 이끌림과 호기심', 'IVE')
-        posts.append(p7)
-        posts.append(p8)
-        posts.append(p9)
+        posts.append(Post('Accendio', '주문 걸어 아센디오', 'IVE'))
+        posts.append(Post('I AM', '어제랑 또 다른 짜릿한 나', 'IVE'))
+        posts.append(Post('LOVE DIVE', '참을 수 없는 이끌림과 호기심', 'IVE'))
         ```
         - 코드설명(게시글 작성 및 리스트 관리)
             1. 'Post' 인스턴스 생성 및 리스트에 추가하기
@@ -170,14 +157,17 @@
         search_author = input("찾으실 글쓴이를 입력해주세요: ")
         search_titles = search_name(search_author, posts)
         if isinstance(search_titles, list):
-            print(f"{search_author}가 작성한 게시글: {','.join(search_titles)}")
+            print(f"{search_author}(이)가 작성한 게시글: {','.join(search_titles)}")
+        elif search_author == "":
+            pass
         else:
-            print(f"{search_author}가 작성한 게시글이 없습니다.")
+            print(f"{search_author}(이)가 들어간 작성자가 없습니다.")
         ```
         - 코드설명(특정 회원의 게시글 검색)
             1. 글쓴이를 입력받아 해당 글쓴이가 작성한 게시글의 제목을 반환하는 함수 search_name 작성
             2. 사용자로부터 글쓴이 이름을 입력받음
             3. 입력받은 글쓴이가 작성한 게시글이 있으면 제목을 출력, 없으면 해당 글쓴이가 작성한 게시글이 없다고 출력
+            4. 입력할 내용이 없을땐 엔터 입력시 다음 내용으로 넘어가도록 수정
 
         ```
         def search_include(word, posts):
@@ -202,14 +192,18 @@
             2. 사용자로부터 검색어를 입력받음
             3. 입력받은 검색어가 포함된 게시글이 있으면 제목을 출력, 없으면 해당 검색어가 포함된 게시글이 없다고 출력
         ```
-        new_name = input("이름을 입력하세요: ")
-        new_user_name = input("아이디를 입력하세요: ")
-        new_password = input("패스워드를 입력하세요: ")
-        m4 = Member(new_name, new_user_name, new_password)
-        members.append(m4)
-
-        new_post = input("제목을 입력하세요: ")
-        new_content = input("내용을 입력하세요: ")
+        def create_new_user():
+            while True:
+                new_name = input("이름을 입력하세요: ")
+                new_username = input("아이디를 입력하세요: ")
+                new_password = input("패스워드를 입력하세요: ")
+                if new_name == "" or new_username == "" or new_password == "":
+                    print("빠트린 입력값이 있습니다. 다시 입력해주세요!")
+                    new_name = ""
+                    new_username = ""
+                    new_password = ""
+                else:
+                    break
 
         flag = False  # while문 탈출 도구
         while True:
@@ -224,21 +218,34 @@
                 break
             print("입력하신 작성자의 아이디를 찾을 수 없습니다. 다시 입력하세요!")
 
-        print("회원 목록")
+        time.sleep(2)
         for member in members:
             member.display()
-
+        print("\n")
+        time.sleep(3)
+        #새로운 글이 추가된 글 목록
         print("작성된 글 목록")
+
+        time.sleep(2)
         for post in posts:
             print(f"제목: {post.title}, 작성자: {post.author}")
+
+        time.sleep(2)
         ```
         - 코드설명
-            1. 사용자로부터 새로운 회원의 이름, 아이디, 비밀번호를 입력받아 Member 객체를 생성하고 members 리스트에 추가
+            1. 새로운 사용자 만드는 함수, 이름, 비밀번호, 아이디 모두 입력했을때만 등록, 아닐경우 전부 입력하도록 유도 문구 출력 후 다시 입력 받음
             2. 사용자로부터 새로운 게시글의 제목과 내용을 입력받음
             3. 작성자의 아이디를 입력받아 members 리스트에서 유효한 작성자인지 확인
             4. 유효한 작성자일 경우 Post 객체를 생성하여 posts 리스트에 추가
             5. 유효한 작성자가 아닐 경우 다시 입력받음
             6. 모든 회원과 작성된 게시글을 출력함
+            7. 가독성을 위해 time.sleep()으로 지연 추가
+
+- 최적화 및 편의성 개선
+    - 최적화를 위해 한번 쓰이고 안쓰이는 변수삭제 후 직접입력(m1~4, p1~9)
+    - 아무것도 입력안하고 엔터 눌렀을때 skip하게 변경
+    - 이름, 아이디, 패스워드 전부 입력했을때만 회원정보 등록, 아닐경우 초기화 후 다시 입력 받음(게시글도 마찬가지)
+    - 한번에 나오면 어지러우니까 time.sleep()으로 지연 넣음
 
 - 참고자료
     hashlib 라이브러리: https://docs.python.org/ko/3/library/hashlib.html
